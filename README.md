@@ -6,8 +6,7 @@
 
 En toda la red no hay ni una wordlist en español. Aquí va una compilación de palabras mexicanas reales. Que le sean de utilidad.
 
-[![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-blue)](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.0)
-
+[📥 Descargar Release v1.0.0](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.0)
 ---
 
 ## 📦 Las 4 listas
