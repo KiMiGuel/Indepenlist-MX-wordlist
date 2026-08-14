@@ -1,11 +1,12 @@
-[LEEME.md](https://github.com/user-attachments/files/31087523/LEEME.md)
+[LEEME(1).md](https://github.com/user-attachments/files/31088237/LEEME.1.md)
+
 # 🇲🇽 Indepenlist-MX-wordlist
 
 > *Contraseña* — hmmm... alguien que está en contra de señas. 🧐
 
 En toda la red no hay ni una wordlist en español. Aquí va una compilación de palabras mexicanas reales. Que le sean de utilidad. Ahí te va, carnal.
 
-[📥 Descargar Release v1.0.0](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.0)
+[![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-blue)](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.0)
 
 ---
 
@@ -33,6 +34,32 @@ En toda la red no hay ni una wordlist en español. Aquí va una compilación de 
 
 ---
 
+## 🚀 Cómo usar
+
+### Hashcat
+```bash
+hashcat -m 22000 handshake.hccapx mexican_wordlist_final.txt
+```
+
+### Aircrack-ng
+```bash
+aircrack-ng handshake.cap -w mexican_wordlist_final.txt
+```
+
+### John the Ripper
+```bash
+john --wordlist=mexican_wordlist_final.txt hash.txt
+```
+
+### Hydra
+```bash
+hydra -l usuario -P mexican_wordlist_core.txt target ssh
+```
+
+> ⚡ Usa `final` para un primer barrido rápido. Si no rompe, prueba `full` o combina con reglas (`-r` en Hashcat).
+
+---
+
 ## 📁 Estructura
 
 ```
@@ -49,8 +76,10 @@ En toda la red no hay ni una wordlist en español. Aquí va una compilación de 
 
 ## ⚖️ Disclaimer
 
-Estas listas son el resultado de limpiar, deduplicar y fusionar datos públicos aplicando patrones lingüísticos del español mexicano. **Úsalas solo en entornos autorizados.** No seas *mala onda*.
+Estas listas son el resultado de limpiar, deduplicar y fusionar datos públicos aplicando patrones lingüísticos del español mexicano. **Úsalas solo en entornos autorizados.** Portense bien cabrones**.
 
 ---
 
 *Hecho con 🌮 y paciencia en México.*
+
+**Pórtense bien, cabrones.**
