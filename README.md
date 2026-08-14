@@ -1,5 +1,3 @@
-[LEEME(1).md](https://github.com/user-attachments/files/31088237/LEEME.1.md)
-
 # 🇲🇽 Indepenlist-MX-wordlist
 
 > *Contraseña* — hmmm... alguien que está en contra de señas. 🧐
