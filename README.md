@@ -1,0 +1,54 @@
+[LEEME.md](https://github.com/user-attachments/files/31087523/LEEME.md)
+# 🇲🇽 Indepenlist-MX-wordlist
+
+> *Contraseña* — hmmm... alguien que está en contra de señas. 🧐
+
+En toda la red no hay ni una wordlist en español. Aquí va una compilación de palabras mexicanas reales. Que le sean de utilidad. Ahí te va, carnal.
+
+---
+
+## 📦 Las 4 listas
+
+| Archivo | Líneas | Tamaño | Para qué usarla |
+|---|---|---|---|
+| `mexican_wordlist_final.txt` | ~7.7M | 90 MB | 🥇 **Empieza aquí.** Mejor relación tamaño/cobertura. |
+| `mexican_wordlist_full.txt` | ~9.0M | 108 MB | 🌎 El arsenal completo. |
+| `mexican_wordlist_core.txt` | ~1.9M | 29 MB | 🧠 Ataques dirigidos a humanos (nombres, lugares, frases). |
+| `mexican_wordlist_mangled.txt` | ~1.7M | 19 MB | 🤖 Variantes con leetspeak y mutaciones. |
+
+> 💡 **Pro tip:** Si solo vas a bajar una, agarra `mexican_wordlist_final.txt`.
+
+---
+
+## 🛠️ ¿Cómo se hicieron?
+
+1. 🧹 **Limpieza** — UTF-8 forzoso, acentos corregidos, fantasmas eliminados (BOM, zero-width, mojibake).
+2. 🔗 **Fusión** — Separadas en tiers: humano (`core`), mutado (`mangled`) y global (`full`).
+3. 📊 **PACK** — Análisis de máscaras con `statsgen` para encontrar los patrones más comunes.
+4. ✂️ **Optimización** — La lista `final` conserva solo las palabras que coinciden con las máscaras del 80% más frecuente.
+
+> 🎯 El 61% de las contraseñas mexicanas miden entre 8 y 13 caracteres, y la gran mayoría son **palabra + números**.
+
+---
+
+## 📁 Estructura
+
+```
+├── mexican_wordlist_final.txt      ← 🥇 empieza aquí
+├── mexican_wordlist_full.txt       ← 🌎 todo
+├── mexican_wordlist_core.txt       ← 🧠 humano
+├── mexican_wordlist_mangled.txt    ← 🤖 mutado
+├── LEEME.md                        ← 📖 estás aquí
+├── scripts/                        ← 🐍 scripts de limpieza y fusión
+└── pack_out/                       ← 📊 stats y máscaras de PACK
+```
+
+---
+
+## ⚖️ Disclaimer
+
+Estas listas son el resultado de limpiar, deduplicar y fusionar datos públicos aplicando patrones lingüísticos del español mexicano. **Úsalas solo en entornos autorizados.** No seas *mala onda*.
+
+---
+
+*Hecho con 🌮 y paciencia en México.*
