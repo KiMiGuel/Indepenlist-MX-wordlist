@@ -4,7 +4,7 @@
 
 En toda la red no hay ni una wordlist en español. Aquí va una compilación de palabras mexicanas reales. Que le sean de utilidad.
 
-[📥 Descargar Release v1.0.0](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.0)
+[📥 Descargar Release v1.0.1](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.1)
 ---
 
 ## 📦 Las 4 listas
@@ -34,46 +34,43 @@ En toda la red no hay ni una wordlist en español. Aquí va una compilación de 
 ## 🚀 Cómo usar
 
 ### Hashcat
-```bash
+\`\`\`bash
 hashcat -m 22000 handshake.hccapx mexican_wordlist_final.txt
-```
+\`\`\`
 
 ### Aircrack-ng
-```bash
+\`\`\`bash
 aircrack-ng handshake.cap -w mexican_wordlist_final.txt
-```
+\`\`\`
 
 ### John the Ripper
-```bash
+\`\`\`bash
 john --wordlist=mexican_wordlist_final.txt hash.txt
-```
+\`\`\`
 
 ### Hydra
-```bash
+\`\`\`bash
 hydra -l usuario -P mexican_wordlist_core.txt target ssh
-```
+\`\`\`
 
 > ⚡ Usa `final` para un primer barrido rápido. Si no rompe, prueba `full` o combina con reglas (`-r` en Hashcat).
 
 ---
 
-## 📁 Estructura
+## 📁 Contenido del release
 
-```
+\`\`\`
 ├── mexican_wordlist_final.txt      ← 🥇 empieza aquí
 ├── mexican_wordlist_full.txt       ← 🌎 todo
 ├── mexican_wordlist_core.txt       ← 🧠 humano
-├── mexican_wordlist_mangled.txt    ← 🤖 mutado
-├── LEEME.md                        ← 📖 estás aquí
-├── scripts/                        ← 🐍 scripts de limpieza y fusión
-└── pack_out/                       ← 📊 stats y máscaras de PACK
-```
+└── mexican_wordlist_mangled.txt    ← 🤖 mutado
+\`\`\`
 
 ---
 
 ## ⚖️ Disclaimer
 
-Estas listas son el resultado de limpiar, deduplicar y fusionar datos públicos aplicando patrones lingüísticos del español mexicano. **Úsalas solo en entornos autorizados.** Portense bien cabrones**.
+Estas listas son el resultado de limpiar, deduplicar y fusionar datos públicos aplicando patrones lingüísticos del español mexicano. **Úsalas solo en entornos autorizados.**
 
 ---
 
