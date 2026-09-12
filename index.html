@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indepenlist-MX — Wordlist de contraseñas mexicanas</title>
-<meta name="description" content="Wordlist de contraseñas en español mexicano: 4 listas limpiadas, fusionadas y optimizadas con análisis de máscaras PACK. Para hashcat, aircrack-ng, John y Hydra.">
+<meta name="description" content="Wordlist de contraseñas en español mexicano: 2 listas (general y router/WiFi) limpiadas y fusionadas con verificación real de overlap. Para hashcat, aircrack-ng, John y Hydra.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇲🇽</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,7 +120,7 @@
     <div class="logo">
       <span class="flag">🇲🇽</span>
       <span class="word">Indepen<span>list-MX</span></span>
-      <span class="badge-ver">v1.0.1</span>
+      <span class="badge-ver">v2.0.0</span>
     </div>
     <div class="links">
       <a href="#descargar">Descargar</a>
@@ -135,7 +135,7 @@
   <div class="wrap inner">
     <p class="kicker-top">Wordlist en español mexicano</p>
     <h1>La wordlist que le faltaba a la red en español.</h1>
-    <p class="tagline">4 listas mexicanas reales, <b>limpiadas, fusionadas y optimizadas</b> con análisis de máscaras. Para hashcat, aircrack-ng, John the Ripper y Hydra.</p>
+    <p class="tagline">2 listas mexicanas reales, <b>limpiadas, fusionadas y curadas</b> con verificación real de overlap. Para hashcat, aircrack-ng, John the Ripper y Hydra.</p>
     <div class="cta" id="descargar">
       <a class="btn btn-p" href="https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/latest/download/mx_wordlist.zip">📥 Descargar .zip</a>
       <a class="btn btn-s" href="https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/latest/download/mx_wordlist.tar.gz">📥 Descargar .tar.gz</a>
@@ -147,18 +147,16 @@
 
 <section id="listas">
   <div class="wrap">
-    <p class="kicker">Las 4 listas</p>
+    <p class="kicker">Las 2 listas</p>
     <h2>Elige tu arsenal</h2>
     <div class="table-wrap">
     <table>
       <tr><th>Archivo</th><th>Líneas</th><th>Tamaño</th><th>Para qué usarla</th></tr>
-      <tr><td>mexican_wordlist_final.txt</td><td>~7.7M</td><td>90 MB</td><td>🥇 Empieza aquí. Mejor relación tamaño/cobertura.</td></tr>
-      <tr><td>mexican_wordlist_full.txt</td><td>~9.0M</td><td>108 MB</td><td>🌎 El arsenal completo.</td></tr>
-      <tr><td>mexican_wordlist_core.txt</td><td>~1.9M</td><td>29 MB</td><td>🧠 Ataques dirigidos a humanos (nombres, lugares, frases).</td></tr>
-      <tr><td>mexican_wordlist_mangled.txt</td><td>~1.7M</td><td>19 MB</td><td>🤖 Variantes con leetspeak y mutaciones.</td></tr>
+      <tr><td>mx_passwords.txt</td><td>~9.6M</td><td>115 MB</td><td>🔑 Wordlist general — nombres, cultura mexicana, mutaciones y leetspeak.</td></tr>
+      <tr><td>mx_router.txt</td><td>~1.5M</td><td>22 MB</td><td>📡 Candidatos router/WiFi — patrones ISP (MAC/SSID), gibberish válido WPA, control aleatorio real.</td></tr>
     </table>
     </div>
-    <p class="pro-tip">💡 <b style="color:var(--ink)">Pro tip:</b> si solo vas a bajar una, agarra <code>mexican_wordlist_final.txt</code>.</p>
+    <p class="pro-tip">💡 <b style="color:var(--ink)">Pro tip:</b> contraseñas generales → <code>mx_passwords.txt</code>. Router/WiFi → <code>mx_router.txt</code>.</p>
   </div>
 </section>
 
@@ -175,17 +173,17 @@
       <div class="card">
         <span class="tag">02</span>
         <h3>Fusión</h3>
-        <p>Separadas en tiers: humano (core), mutado (mangled) y global (full).</p>
+        <p>Consolidadas en 2 categorías: contraseñas generales (passwords) y candidatos router/WiFi (router).</p>
       </div>
       <div class="card">
         <span class="tag">03</span>
-        <h3>Análisis PACK</h3>
-        <p>Máscaras con statsgen para encontrar los patrones de contraseña más comunes.</p>
+        <h3>Deduplicación real</h3>
+        <p>Overlap verificado línea por línea antes de fusionar, no supuesto.</p>
       </div>
       <div class="card">
         <span class="tag">04</span>
-        <h3>Optimización</h3>
-        <p><code>final</code> conserva solo las palabras que coinciden con las máscaras del 80% más frecuente.</p>
+        <h3>Curación</h3>
+        <p>Contenido mecánico/redundante confirmado por overlap real se descarta.</p>
       </div>
     </div>
     <div class="stat-grid">
@@ -199,23 +197,23 @@
   <div class="wrap">
     <p class="kicker">Cómo usar</p>
     <h2>Directo a tu herramienta favorita</h2>
-    <p class="lead">Usa <code>final</code> para un primer barrido rápido. Si no rompe, prueba <code>full</code> o combina con reglas (<code>-r</code> en Hashcat).</p>
+    <p class="lead">Ataques generales usa <code>mx_passwords.txt</code>. Routers/WiFi usa <code>mx_router.txt</code>. Combina con reglas (<code>-r</code> en Hashcat) para más cobertura.</p>
     <div class="install bracketed">
       <div class="bar"><span>hashcat</span></div>
       <pre><span class="c"># WPA/WPA2</span>
-hashcat -m 22000 handshake.hccapx mexican_wordlist_final.txt</pre>
+hashcat -m 22000 handshake.hccapx mx_router.txt</pre>
     </div>
     <div class="install bracketed">
       <div class="bar"><span>aircrack-ng</span></div>
-      <pre>aircrack-ng handshake.cap -w mexican_wordlist_final.txt</pre>
+      <pre>aircrack-ng handshake.cap -w mx_router.txt</pre>
     </div>
     <div class="install bracketed">
       <div class="bar"><span>john</span></div>
-      <pre>john --wordlist=mexican_wordlist_final.txt hash.txt</pre>
+      <pre>john --wordlist=mx_passwords.txt hash.txt</pre>
     </div>
     <div class="install bracketed">
       <div class="bar"><span>hydra</span></div>
-      <pre>hydra -l usuario -P mexican_wordlist_core.txt target ssh</pre>
+      <pre>hydra -l usuario -P mx_passwords.txt target ssh</pre>
     </div>
   </div>
 </section>

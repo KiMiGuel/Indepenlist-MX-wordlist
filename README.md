@@ -4,28 +4,26 @@
 
 En toda la red no hay ni una wordlist en español. Aquí va una compilación de palabras mexicanas reales. Que le sean de utilidad.
 
-[📥 Descargar Release v1.0.1](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v1.0.1)
+[📥 Descargar Release v2.0.0](https://github.com/KiMiGuel/Indepenlist-MX-wordlist/releases/tag/v2.0.0)
 ---
 
-## 📦 Las 4 listas
+## 📦 Las 2 listas
 
 | Archivo | Líneas | Tamaño | Para qué usarla |
 |---|---|---|---|
-| `mexican_wordlist_final.txt` | ~7.7M | 90 MB | 🥇 **Empieza aquí.** Mejor relación tamaño/cobertura. |
-| `mexican_wordlist_full.txt` | ~9.0M | 108 MB | 🌎 El arsenal completo. |
-| `mexican_wordlist_core.txt` | ~1.9M | 29 MB | 🧠 Ataques dirigidos a humanos (nombres, lugares, frases). |
-| `mexican_wordlist_mangled.txt` | ~1.7M | 19 MB | 🤖 Variantes con leetspeak y mutaciones. |
+| `mx_passwords.txt` | ~9.6M | 115 MB | 🔑 Wordlist general de contraseñas — nombres, cultura mexicana, mutaciones y leetspeak. |
+| `mx_router.txt` | ~1.5M | 22 MB | 📡 Candidatos específicos para router/WiFi — patrones ISP (MAC/SSID), gibberish válido WPA y control aleatorio real. |
 
-> 💡 **Pro tip:** Si solo vas a bajar una, agarra `mexican_wordlist_final.txt`.
+> 💡 **Pro tip:** Contraseñas generales → `mx_passwords.txt`. Auditoría de router/red WiFi → `mx_router.txt`, más dirigida.
 
 ---
 
 ## 🛠️ ¿Cómo se hicieron?
 
 1. 🧹 **Limpieza** — UTF-8 forzoso, acentos corregidos, fantasmas eliminados (BOM, zero-width, mojibake).
-2. 🔗 **Fusión** — Separadas en tiers: humano (`core`), mutado (`mangled`) y global (`full`).
-3. 📊 **PACK** — Análisis de máscaras con `statsgen` para encontrar los patrones más comunes.
-4. ✂️ **Optimización** — La lista `final` conserva solo las palabras que coinciden con las máscaras del 80% más frecuente.
+2. 🔗 **Fusión** — Consolidadas en 2 categorías: contraseñas generales (`passwords`) y candidatos router/WiFi (`router`).
+3. 📊 **Deduplicación real** — Overlap verificado línea por línea antes de fusionar, no supuesto.
+4. ✂️ **Curación** — Contenido mecánico/redundante confirmado por overlap real se descarta.
 
 > 🎯 El 61% de las contraseñas mexicanas miden entre 8 y 13 caracteres, y la gran mayoría son **palabra + números**.
 
@@ -34,37 +32,35 @@ En toda la red no hay ni una wordlist en español. Aquí va una compilación de 
 ## 🚀 Cómo usar
 
 ### Hashcat
-\`\`\`bash
-hashcat -m 22000 handshake.hccapx mexican_wordlist_final.txt
-\`\`\`
+```bash
+hashcat -m 22000 handshake.hccapx mx_passwords.txt
+```
 
 ### Aircrack-ng
-\`\`\`bash
-aircrack-ng handshake.cap -w mexican_wordlist_final.txt
-\`\`\`
+```bash
+aircrack-ng handshake.cap -w mx_router.txt
+```
 
 ### John the Ripper
-\`\`\`bash
-john --wordlist=mexican_wordlist_final.txt hash.txt
-\`\`\`
+```bash
+john --wordlist=mx_passwords.txt hash.txt
+```
 
 ### Hydra
-\`\`\`bash
-hydra -l usuario -P mexican_wordlist_core.txt target ssh
-\`\`\`
+```bash
+hydra -l usuario -P mx_passwords.txt target ssh
+```
 
-> ⚡ Usa `final` para un primer barrido rápido. Si no rompe, prueba `full` o combina con reglas (`-r` en Hashcat).
+> ⚡ Ataques generales → `mx_passwords.txt`. Routers/WiFi → `mx_router.txt`. Combina con reglas (`-r` en Hashcat) para más cobertura.
 
 ---
 
 ## 📁 Contenido del release
 
-\`\`\`
-├── mexican_wordlist_final.txt      ← 🥇 empieza aquí
-├── mexican_wordlist_full.txt       ← 🌎 todo
-├── mexican_wordlist_core.txt       ← 🧠 humano
-└── mexican_wordlist_mangled.txt    ← 🤖 mutado
-\`\`\`
+```
+├── mx_passwords.txt   ← 🔑 contraseñas generales
+└── mx_router.txt      ← 📡 candidatos router/WiFi
+```
 
 ---
 
